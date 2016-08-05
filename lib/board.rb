@@ -6,16 +6,15 @@ class Board
    @y = y
   end
 
-  def add(kitten, x, y)
-    kittens[kitten.name] = [kitten, x, y]
+  def add(kitten)
+    kittens[kitten.identifier] = kitten
   end
 
   def draw
     board = edge + line*@y + edge
-    kittens.each do |key, value|
-      kitten = value[0]
-      x = value[1]
-      y = value[2]
+    kittens.each do |key, kitten|
+      x = kitten.x
+      y = kitten.y
       board[drawing_position(x,y)] = kitten.identifier
     end
     board
