@@ -45,4 +45,27 @@ describe Board do
     end
   end
 
+  describe "#add" do
+    it 'Adds a kitten to the board on a given position' do
+      board = Board.new(3, 3)
+      kitten = Kitten.new("Skardian")
+
+      board.add(kitten, 0, 0)
+      expect(board.kittens).to include("Skardian" => [kitten, 0, 0])
+    end
+
+    it 'Keeps every kitten added to the board' do
+      board = Board.new(3, 3)
+      kitten = Kitten.new("Skardian")
+      new_kitten = Kitten.new("NotSkardian")
+
+      board.add(kitten, 0, 0)
+      expect(board.kittens).to include("Skardian" => [kitten, 0, 0])
+
+      board.add(new_kitten, 1, 1)
+      expect(board.kittens).to include("Skardian" => [kitten, 0, 0])
+      expect(board.kittens).to include("NotSkardian" => [new_kitten, 1, 1])
+    end
+  end
+
 end
