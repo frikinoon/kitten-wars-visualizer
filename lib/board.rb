@@ -7,9 +7,17 @@ class Board
   end
 
   def draw
-    edge = '+' + '-'*@x + '+' + "\n"
-    line = '|' + '·'*@x + '|' + "\n"
     edge + line*@y + edge
+  end
+
+  private
+
+  def edge
+    '+' + '-'*@x + '+' + "\n"
+  end
+
+  def line
+    '|' + '·'*@x + '|' + "\n"
   end
 
 end
