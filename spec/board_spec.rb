@@ -18,4 +18,31 @@ describe Board do
     end
   end
 
+  describe "#draw" do
+    it 'Paints a 2x2 board' do
+      board = Board.new(2,2)
+      drawing = <<-END.gsub(/^ +/, "")
+      +--+
+      |··|
+      |··|
+      +--+
+      END
+
+      expect(board.draw).to eq drawing
+    end
+
+    it 'Paints a 3x3 board' do
+      board = Board.new(3,3)
+      drawing = <<-END.gsub(/^ +/, "")
+      +---+
+      |···|
+      |···|
+      |···|
+      +---+
+      END
+
+      expect(board.draw).to eq drawing
+    end
+  end
+
 end

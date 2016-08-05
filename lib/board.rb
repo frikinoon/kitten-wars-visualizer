@@ -6,4 +6,10 @@ class Board
    @y = y
   end
 
+  def draw
+    edge = '+' + '-'*@x + '+' + "\n"
+    line = '|' + '·'*@x + '|' + "\n"
+    edge + line*@y + edge
+  end
+
 end
