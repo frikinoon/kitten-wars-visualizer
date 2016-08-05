@@ -16,7 +16,7 @@ class Board
       kitten = value[0]
       x = value[1]
       y = value[2]
-      board[drawing_position(x,y)] = kitten.figure
+      board[drawing_position(x,y)] = kitten.identifier
     end
     board
   end

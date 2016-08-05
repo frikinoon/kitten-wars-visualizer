@@ -4,7 +4,7 @@ class Kitten
    @name = name
   end
 
-  def figure
+  def identifier
     @name[0]
   end
 

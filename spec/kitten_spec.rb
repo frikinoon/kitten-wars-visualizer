@@ -10,11 +10,11 @@ describe Kitten do
     end
   end
 
-  describe "#figure" do
+  describe "#identifier" do
     it 'returns a letter to represent the kitten' do
       kitten = Kitten.new('Skardian')
 
-      expect(kitten.figure).to eq 'S'
+      expect(kitten.identifier).to eq 'S'
     end
   end
 end
