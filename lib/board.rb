@@ -11,7 +11,13 @@ class Board
   end
 
   def draw
-    edge + line*@y + edge
+    board = edge + line*@y + edge
+    kittens.each do |kitten, value|
+      x = value[1]
+      y = value[2]
+      board[drawing_position(x,y)] = 'S'
+    end
+    board
   end
 
   def kittens
@@ -26,6 +32,10 @@ class Board
 
   def line
     '|' + '·'*@x + '|' + "\n"
+  end
+
+  def drawing_position(x, y)
+    (@x + 3) * (y + 1) + (x + 1)
   end
 
 end

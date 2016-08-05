@@ -43,6 +43,21 @@ describe Board do
 
       expect(board.draw).to eq drawing
     end
+
+    it 'Paints a board with a kitten' do
+      board = Board.new(3,3)
+      kitten = Kitten.new("Skardian")
+      board.add(kitten, 0, 0)
+      drawing = <<-END.gsub(/^ +/, "")
+      +---+
+      |S··|
+      |···|
+      |···|
+      +---+
+      END
+
+      expect(board.draw).to eq drawing
+    end
   end
 
   describe "#add" do
